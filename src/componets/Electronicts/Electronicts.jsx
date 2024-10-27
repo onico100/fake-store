@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchElectronicsData } from "../../service";
+import styles from "./Electronicts.module.css";
 
 const Electronicts = () => {
   const [electronics, setElectronics] = useState([]);
@@ -11,13 +12,17 @@ const Electronicts = () => {
   return (
     <div>
       <h2>Electronics</h2>
-      <ul>
+      <div className={styles.container}>
         {electronics.map((item) => (
-          <li key={item.id}>
-            {item.title} - ${item.price}
-          </li>
+          <div className={styles.item} key={item.id}>
+            <img src={item.image} alt={item.title} />
+            <div className={styles.itemContent}>
+              <h3>{item.title}</h3>
+              <div className={styles.price}>${item.price}</div>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
