@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchJewelryData } from "../../service";
-
+import styles from "./Jewlery.module.css";
 const Jewlery = () => {
   const [jewelry, setJewelry] = useState([]);
 
@@ -9,16 +9,19 @@ const Jewlery = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.product}>
       <h2>Jewelry</h2>
-      <ul>
+      <div className={styles.container}>
         {jewelry.map((item) => (
-          <li key={item.id}>
-            {item.title} - ${item.price}
-            <img src={item.image}></img>
-          </li>
+          <div className={styles.item} key={item.id}>
+            <img src={item.image} alt={item.title} />
+            <div className={styles.itemContent}>
+              <h3>{item.title}</h3>
+              <div className={styles.price}>${item.price}</div>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
