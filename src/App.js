@@ -29,7 +29,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route
                   path="/Electronicts"
-                  element={<ItemConteiner itemsName={"Electronicts"} />}
+                  element={<ItemConteiner itemsName={"Electronics"} />}
                 />
                 <Route
                   path="/Jewlery"
