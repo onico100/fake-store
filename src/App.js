@@ -9,24 +9,31 @@ function App() {
     <div>
       <Router>
         <div className="App">
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/Electronicts">Electronicts</Link>
-              </li>
-              <li>
-                <Link to="/Jewlery">Jewlery</Link>
-              </li>
-            </ul>
-          </nav>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Electronicts" element={<Electronicts />} />
-            <Route path="/Jewlery" element={<Jewlery />} />
-          </Routes>
+          <div class="topBar">
+            <h1>Shop site</h1>
+          </div>
+          <div className="container">
+            <nav className="sideBar">
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/Electronicts">Electronicts</Link>
+                </li>
+                <li>
+                  <Link to="/Jewlery">Jewlery</Link>
+                </li>
+              </ul>
+            </nav>
+            <div className="cont">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/Electronicts" element={<Electronicts />} />
+                <Route path="/Jewlery" element={<Jewlery />} />
+              </Routes>
+            </div>
+          </div>
         </div>
       </Router>
     </div>

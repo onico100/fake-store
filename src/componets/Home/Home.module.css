@@ -1,0 +1,15 @@
+.welcome {
+  width: 76vw;
+  background-color: aliceblue;
+  color: blueviolet;
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px;
+  height: 100vh;
+  padding: 20px;
+}
+
+.welcome h1 {
+  margin-bottom: 10px;
+  font-size: 5rem;
+}
