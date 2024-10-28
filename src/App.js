@@ -1,9 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
-import Home from "./componets/Home/Home";
-import Electronicts from "./componets/Electronicts/Electronicts";
-import Jewlery from "./componets/Jewlery/Jewlery";
-import ItemContiner from "./componets/ItemsConteiner/ItemConteiner";
+import { Home, ItemConteiner } from "./componets";
 
 function App() {
   return (
@@ -32,11 +29,11 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route
                   path="/Electronicts"
-                  element={<ItemContiner itemsName={"Electronicts"} />}
+                  element={<ItemConteiner itemsName={"Electronicts"} />}
                 />
                 <Route
                   path="/Jewlery"
-                  element={<Jewlery itemsName={"Jewelery"} />}
+                  element={<ItemConteiner itemsName={"Jewelery"} />}
                 />
               </Routes>
             </div>
