@@ -1,23 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { getElectronics, getJewelery } from "../../service";
+import { getItems } from "../../service";
 import styles from "./ItemContiner.module.css";
 const ItemContiner = ({ itemsName }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    if (itemsName === "Jewelery") {
-      getJewelery()
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data);
-        });
-    } else {
-      getElectronics()
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data);
-        });
-    }
+    getItems(itemsName.toLowerCase())
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      });
   }, [itemsName]);
 
   return (
