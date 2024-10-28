@@ -22,6 +22,9 @@ function App() {
                 <li>
                   <Link to="/Jewlery">Jewlery</Link>
                 </li>
+                <li>
+                  <Link to="/Books">Books</Link>
+                </li>
               </ul>
             </nav>
             <div className="cont">
@@ -34,6 +37,10 @@ function App() {
                 <Route
                   path="/Jewlery"
                   element={<ItemConteiner itemsName={"Jewelery"} />}
+                />
+                <Route
+                  path="/Books"
+                  element={<ItemConteiner itemsName={"Books"} />}
                 />
               </Routes>
             </div>
