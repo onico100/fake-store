@@ -1,16 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { getItems } from "../../service";
 import styles from "./ItemContiner.module.css";
-const ItemContiner = ({ itemsName }) => {
-  const [data, setData] = useState([]);
+import { useQuery } from "react-query";
 
-  useEffect(() => {
-    getItems(itemsName.toLowerCase())
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      });
-  }, [itemsName]);
+const ItemContainer = ({ itemsName }) => {
+  const {
+    data = [],
+    isLoading,
+    error,
+  } = useQuery(
+    [itemsName.toLowerCase()],
+    () => getItems(itemsName.toLowerCase()).then((res) => res.json()),
+    {
+      staleTime: 60000,
+    }
+  );
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error loading items</div>;
 
   return (
     <div>
@@ -30,4 +37,4 @@ const ItemContiner = ({ itemsName }) => {
   );
 };
 
-export default ItemContiner;
+export default ItemContainer;
