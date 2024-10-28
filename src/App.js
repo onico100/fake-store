@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import Home from "./componets/Home/Home";
 import Electronicts from "./componets/Electronicts/Electronicts";
 import Jewlery from "./componets/Jewlery/Jewlery";
+import ItemContiner from "./componets/ItemsConteiner/ItemConteiner";
 
 function App() {
   return (
@@ -29,8 +30,14 @@ function App() {
             <div className="cont">
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/Electronicts" element={<Electronicts />} />
-                <Route path="/Jewlery" element={<Jewlery />} />
+                <Route
+                  path="/Electronicts"
+                  element={<ItemContiner itemsName={"Electronicts"} />}
+                />
+                <Route
+                  path="/Jewlery"
+                  element={<Jewlery itemsName={"Jewelery"} />}
+                />
               </Routes>
             </div>
           </div>
